@@ -31,6 +31,7 @@ plugins {
     id "org.jetbrains.dokka" version "1.4.32"
     id "org.sonarqube" version "3.2.0"
     id "jacoco"
+    id "com.google.devtools.ksp" version "1.5.21-1.0.0-beta07" apply false
 }
 
 subprojects {
@@ -63,6 +64,7 @@ allprojects {
     }
 
     repositories {
+        google()
         mavenCentral()
     }
 

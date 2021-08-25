@@ -44,6 +44,7 @@ class Dependencies : Plugin<Project> {
         const val micronautStarter = ":starters:micronaut"
 
         const val commonAnnotation = ":annotation"
+        const val processor = ":processor"
     }
 
     object Versions {
@@ -56,6 +57,7 @@ class Dependencies : Plugin<Project> {
         const val slf4j = "1.7.30"
         const val springBoot = "2.3.5.RELEASE"
         const val micronaut = "2.1.3"
+        const val ksp = "1.5.21-1.0.0-beta07"
     }
 
     object BackendLibraries {
@@ -89,6 +91,10 @@ class Dependencies : Plugin<Project> {
         const val runtime = "io.micronaut:micronaut-runtime:${Versions.micronaut}"
         const val netty = "io.micronaut:micronaut-http-server-netty:${Versions.micronaut}"
         const val injectJava = "io.micronaut:micronaut-inject-java:${Versions.micronaut}"
+    }
+
+    object ProcessorLibraries {
+        const val ksp = "com.google.devtools.ksp:symbol-processing-api:${Versions.ksp}"
     }
 
 }

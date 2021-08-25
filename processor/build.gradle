@@ -1,0 +1,5 @@
+import br.com.zup.beagle.Dependencies
+
+dependencies {
+    implementation Dependencies.ProcessorLibraries.ksp
+}

@@ -16,6 +16,10 @@
 
 import br.com.zup.beagle.Dependencies
 
+apply plugin: "com.google.devtools.ksp"
+
 dependencies {
     api project(Dependencies.Modules.framework)
+    implementation project(":processor")
+    ksp project(":processor")
 }
