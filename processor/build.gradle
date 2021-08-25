@@ -3,3 +3,7 @@ import br.com.zup.beagle.Dependencies
 dependencies {
     implementation Dependencies.ProcessorLibraries.ksp
 }
+
+sourceSets.main {
+    java.srcDirs("src/main/kotlin")
+}

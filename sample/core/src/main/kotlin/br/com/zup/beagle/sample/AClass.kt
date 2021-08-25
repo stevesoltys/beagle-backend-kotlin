@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-import br.com.zup.beagle.Dependencies
+package br.com.zup.beagle.sample
 
-plugins {
-    id "com.google.devtools.ksp"
-}
+import com.example.annotation.Builder
 
-dependencies {
-    api project(Dependencies.Modules.framework)
-    implementation project(Dependencies.Modules.processor)
-    ksp project(Dependencies.Modules.processor)
+@Builder
+class AClass(private val a: Int, val b: String, val c: Double) {
+    val p = "$a, $b, $c"
+    fun foo() = p
 }
