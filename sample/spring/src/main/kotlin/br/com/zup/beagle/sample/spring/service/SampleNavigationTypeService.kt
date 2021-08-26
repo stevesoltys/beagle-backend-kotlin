@@ -42,6 +42,7 @@ import br.com.zup.beagle.widget.layout.NavigationBarItem
 import br.com.zup.beagle.widget.layout.Screen
 import br.com.zup.beagle.widget.ui.Button
 import br.com.zup.beagle.widget.ui.ImagePath.Local
+import br.com.zup.beagle.widget.ui.Text
 import org.springframework.stereotype.Service
 
 @Service
@@ -49,13 +50,14 @@ class SampleNavigationTypeService {
 
     private val buttonPopView = createButton(
         text = "PopView",
-        navigate = Navigate.PopView(),
+        navigate = Navigate.PopView(context = ContextData(id = "popview", "popview 123")),
         backgroundColor = CYAN_BLUE
     )
 
     private val buttonAddViewStep1 = createButton(
         text = "PushView (Step 1)",
-        navigate = Navigate.PushView(Route.Remote(NAVIGATION_TYPE_ENDPOINT)),
+        navigate = Navigate.PushView(Route.Remote(NAVIGATION_TYPE_ENDPOINT),
+            context = ContextData(id = "navigationcontext", "pushview (step1)")),
         backgroundColor = LIGHT_RED
     )
 
@@ -78,16 +80,21 @@ class SampleNavigationTypeService {
         ),
         child = Container(
             children = listOf(
+                Text(expressionOf("@{pushview}")),
+                Text(expressionOf("@{popviewtwo}")),
+                Text(expressionOf("@{popview}")),
                 buttonPopView,
                 createButton(
                     text = "PushView (Step 2)",
-                    navigate = Navigate.PushView(Route.Remote(REPRESENTATION_NAVIGATION_TYPE_STEP2_ENDPOINT)),
+                    navigate = Navigate.PushView(Route.Remote(REPRESENTATION_NAVIGATION_TYPE_STEP2_ENDPOINT),
+                        context = ContextData(id = "pushview", "pushview (step2)")),
                     backgroundColor = LIGHT_RED
                 ),
 
                 createButton(
                     text = "POPTOVIEW (Step 1)",
-                    navigate = Navigate.PopToView(NAVIGATION_TYPE_ENDPOINT),
+                    navigate = Navigate.PopToView(NAVIGATION_TYPE_ENDPOINT,
+                        context = ContextData(id = "popviewtwo", "POPTOVIEW (Step 1)")),
                     backgroundColor = LIGHT_RED
                 ),
                 createButton(
@@ -106,15 +113,20 @@ class SampleNavigationTypeService {
         ),
         child = Container(
             children = listOf(
+                Text(expressionOf("@{pushview}")),
+                Text(expressionOf("@{popviewtwo}")),
+                Text(expressionOf("@{popview}")),
                 buttonPopView,
                 createButton(
                     text = "PushView (Step 3)",
-                    navigate = Navigate.PushView(Route.Remote(REPRESENTATION_NAVIGATION_TYPE_STEP3_ENDPOINT)),
+                    navigate = Navigate.PushView(Route.Remote(REPRESENTATION_NAVIGATION_TYPE_STEP3_ENDPOINT),
+                        context = ContextData(id = "pushview", "pushview (step3)")),
                     backgroundColor = LIGHT_RED
                 ),
                 createButton(
                     text = "PushStack",
-                    navigate = Navigate.PushStack(Route.Remote(REPRESENTATION_PRESENT_ENDPOINT)),
+                    navigate = Navigate.PushStack(Route.Remote(REPRESENTATION_PRESENT_ENDPOINT),
+                        context = ContextData(id = "pushview", "push stack (home)")),
                     backgroundColor = LIGHT_ORANGE
                 )
             )
@@ -128,6 +140,9 @@ class SampleNavigationTypeService {
         ),
         child = Container(
             children = listOf(
+                Text(expressionOf("@{pushview}")),
+                Text(expressionOf("@{popviewtwo}")),
+                Text(expressionOf("@{popview}")),
                 buttonPopView,
                 buttonAddViewStep1,
                 createButton(
@@ -146,6 +161,9 @@ class SampleNavigationTypeService {
         ),
         child = Container(
             children = listOf(
+                Text(expressionOf("@{pushview}")),
+                Text(expressionOf("@{popviewtwo}")),
+                Text(expressionOf("@{popview}")),
                 buttonPopView,
                 createButton(
                     text = "ResetApplication (Step 1)",
@@ -154,12 +172,14 @@ class SampleNavigationTypeService {
                 ),
                 createButton(
                     text = "PushView (Step 1)",
-                    navigate = Navigate.PushView(Route.Remote(NAVIGATION_TYPE_ENDPOINT)),
+                    navigate = Navigate.PushView(Route.Remote(NAVIGATION_TYPE_ENDPOINT)
+                        , context = ContextData(id = "pushview", "push view (from step 3 step 1)")),
                     backgroundColor = RED
                 ),
                 createButton(
                     text = "PopToView (Step 1)",
-                    navigate = Navigate.PopToView(NAVIGATION_TYPE_ENDPOINT),
+                    navigate = Navigate.PopToView(NAVIGATION_TYPE_ENDPOINT,
+                        context = ContextData(id = "popviewtwo", "push view (step 1)")),
                     backgroundColor = RED
                 ),
                 buttonAddViewStep1
