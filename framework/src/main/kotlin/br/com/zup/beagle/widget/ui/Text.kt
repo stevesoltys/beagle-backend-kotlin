@@ -37,17 +37,20 @@ data class Text(
     val text: Bind<String>,
     val styleId: String? = null,
     val textColor: Bind<String>? = null,
+    val textSize: Bind<Int>? = null,
     val alignment: Bind<TextAlignment>? = null
 ) : Widget() {
     constructor(
         text: String,
         styleId: String? = null,
         textColor: String? = null,
+        textSize: Int? = null,
         alignment: TextAlignment? = null
     ) : this(
         text = constant(text),
         styleId = styleId,
         textColor = constantNullable(textColor),
+        textSize = constantNullable(textSize),
         alignment = constantNullable(alignment)
     )
 }
