@@ -48,6 +48,7 @@ data class ListView(
     val scrollEndThreshold: Int? = null,
     val iteratorName: String = "item",
     val isScrollIndicatorVisible: Boolean = false,
+    val parallaxHeader: Image? = null,
     val key: String? = null,
     val useParentScroll: Boolean? = null,
     val templates: List<Template>? = null,
