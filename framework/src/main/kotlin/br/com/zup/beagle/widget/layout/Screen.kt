@@ -24,6 +24,7 @@ import br.com.zup.beagle.widget.context.Bind
 import br.com.zup.beagle.widget.context.Context
 import br.com.zup.beagle.widget.context.ContextComponent
 import br.com.zup.beagle.widget.context.constantNullable
+import br.com.zup.beagle.widget.ui.Image
 
 /**
  * The SafeArea will enable Safe areas to help you place your views within the visible portion of the overall interface.
@@ -87,8 +88,19 @@ data class NavigationBar(
     val title: String,
     val showBackButton: Boolean = true,
     val styleId: String? = null,
+    val navigationBarStyle: NavigationBarStyle? = null,
     val navigationBarItems: List<NavigationBarItem>? = null,
     val backButtonAccessibility: Accessibility? = null
+)
+
+data class NavigationBarStyle(
+    val backgroundColor: String? = null,
+    val textColor: String? = null,
+    val textSize: String? = null,
+    val tintColor: String? = null,
+    val isShadowEnabled: Boolean? = null,
+    val isTransparent: Boolean? = null,
+    val titleImage: Image? = null
 )
 
 /**
