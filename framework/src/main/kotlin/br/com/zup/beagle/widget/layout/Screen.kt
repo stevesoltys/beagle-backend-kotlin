@@ -51,25 +51,17 @@ data class SafeArea(
  * @see Accessibility
  *
  * @param text defines the description for the item
- * @param image defines the local image for the item
+ * @param image defines the image for the item
  * @param action defines an action to be called when the item is clicked on
  * @param accessibility defines the accessibility details for the item
  *
  */
-
 data class NavigationBarItem(
     val text: String,
-    val image: Bind<String>?,
+    val image: Image? = null,
     val action: Action,
     val accessibility: Accessibility? = null
-) {
-    constructor(
-        text: String,
-        image: String? = null,
-        action: Action,
-        accessibility: Accessibility? = null,
-    ) : this(text, constantNullable(image), action, accessibility)
-}
+)
 
 /**
  *  Typically displayed at the top of the window, containing buttons for navigating within a hierarchy of screens
