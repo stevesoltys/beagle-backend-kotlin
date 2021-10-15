@@ -21,12 +21,12 @@ import br.com.zup.beagle.widget.context.Bind
 import br.com.zup.beagle.widget.context.constant
 
 data class Wait(
-    val time: Bind<Long>,
+    val time: Bind<Int>,
     val onFinish: List<Action>? = null,
     override var analytics: ActionAnalyticsConfig? = null
 ) : AnalyticsAction {
     constructor(
-        time: Long,
+        time: Int,
         onFinish: List<Action>? = null,
         analytics: ActionAnalyticsConfig? = null
     ) : this(
