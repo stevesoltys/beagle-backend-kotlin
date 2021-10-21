@@ -98,6 +98,12 @@ sealed class Navigate : AnalyticsAction {
         val navigationContext: NavigationContext? = null,
     ) : Navigate()
 
+    data class PushViewRoot(
+        val route: Route,
+        override var analytics: ActionAnalyticsConfig? = null,
+        val navigationContext: NavigationContext? = null
+    ) : Navigate()
+
     /**
      * This type means the action to be performed is the opening
      * of a new screen using the route passed.
