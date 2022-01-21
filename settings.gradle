@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-include ":sample:core"
-include ":sample:spring"
-include ":sample:micronaut"
+//include ":sample:core"
+//include ":sample:spring"
+//include ":sample:micronaut"
 include ":framework"
 include ":starters:spring"
 include ":starters:micronaut"
