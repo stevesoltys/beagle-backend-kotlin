@@ -38,5 +38,6 @@ data class PageView(
     val onPageChange: List<Action>? = null,
     val currentPage: Bind<Int>? = null,
     val showArrow: Boolean? = null,
-    val animated: Boolean? = null
+    val animated: Boolean? = null,
+    val scrollable: Boolean? = null
 ) : ServerDrivenComponent, ContextComponent
