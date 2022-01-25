@@ -37,5 +37,6 @@ data class PageView(
     override val context: Context? = null,
     val onPageChange: List<Action>? = null,
     val currentPage: Bind<Int>? = null,
-    val showArrow: Boolean? = null
+    val showArrow: Boolean? = null,
+    val animated: Boolean? = null
 ) : ServerDrivenComponent, ContextComponent
