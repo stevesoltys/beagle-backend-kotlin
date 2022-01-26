@@ -77,11 +77,12 @@ data class NavigationBarItem(
  *
  */
 data class NavigationBar(
-    val title: String,
+    val title: String? = null,
     val showBackButton: Boolean = true,
     val styleId: String? = null,
     val navigationBarStyle: NavigationBarStyle? = null,
     val navigationBarItems: List<NavigationBarItem>? = null,
+    val searchBar: SearchBar? = null,
     val backButtonAccessibility: Accessibility? = null
 )
 
@@ -93,6 +94,12 @@ data class NavigationBarStyle(
     val isShadowEnabled: Boolean? = null,
     val isTransparent: Boolean? = null,
     val titleImage: Image? = null
+)
+
+data class SearchBar(
+    val placeholder: String? = null,
+    val hideWhenScrolling: Boolean? = null,
+    val onQueryUpdated: List<Action>? = null
 )
 
 /**
