@@ -17,6 +17,8 @@
 package br.com.zup.beagle.widget.lazy
 
 import br.com.zup.beagle.core.ServerDrivenComponent
+import br.com.zup.beagle.widget.context.Bind
+import br.com.zup.beagle.widget.context.constant
 
 /**
  *  The LazyComponent is used when an asynchronous BFF request is made.
@@ -30,6 +32,12 @@ import br.com.zup.beagle.core.ServerDrivenComponent
  *
  */
 data class LazyComponent(
-    val path: String,
+    val path: Bind<String>,
     val initialState: ServerDrivenComponent
-) : ServerDrivenComponent
+) : ServerDrivenComponent {
+
+    constructor(
+        path: String,
+        initialState: ServerDrivenComponent
+    ) : this(constant(path), initialState)
+}
