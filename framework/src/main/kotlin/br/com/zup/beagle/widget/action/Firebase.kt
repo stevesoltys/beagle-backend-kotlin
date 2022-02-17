@@ -81,3 +81,14 @@ data class FirebaseSendVerificationEmail(
     val onFinish: List<Action>? = null,
     override var analytics: ActionAnalyticsConfig? = null
 ) : AnalyticsAction
+
+/**
+ * Send a forgot password email to a user.
+ */
+data class FirebaseForgotPassword(
+    val email: Bind<String>?,
+    val onSuccess: List<Action>? = null,
+    val onError: List<Action>? = null,
+    val onFinish: List<Action>? = null,
+    override var analytics: ActionAnalyticsConfig? = null
+) : AnalyticsAction
