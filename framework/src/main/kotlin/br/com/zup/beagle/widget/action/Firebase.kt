@@ -92,3 +92,15 @@ data class FirebaseForgotPassword(
     val onFinish: List<Action>? = null,
     override var analytics: ActionAnalyticsConfig? = null
 ) : AnalyticsAction
+
+
+/**
+ * Update a user's password.
+ */
+data class FirebaseUpdatePassword(
+    val password: Bind<String>?,
+    val onSuccess: List<Action>? = null,
+    val onError: List<Action>? = null,
+    val onFinish: List<Action>? = null,
+    override var analytics: ActionAnalyticsConfig? = null
+) : AnalyticsAction
