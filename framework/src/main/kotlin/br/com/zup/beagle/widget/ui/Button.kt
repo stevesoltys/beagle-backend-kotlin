@@ -34,7 +34,9 @@ import br.com.zup.beagle.widget.context.constantNullable
 data class Button(
     val text: Bind<String>,
     val textColor: Bind<String>? = null,
+    val highlightedTextColor: Bind<String>? = null,
     val textSize: Bind<Int>? = null,
+    val highlightedBackgroundColor: Bind<String>? = null,
     val styleId: String? = null,
     val onPress: List<Action>? = null,
     val enabled: Bind<Boolean>? = null
@@ -43,14 +45,18 @@ data class Button(
     constructor(
         text: String,
         textColor: Bind<String>? = null,
+        highlightedTextColor: Bind<String>? = null,
         textSize: Bind<Int>? = null,
+        highlightedBackgroundColor: Bind<String>? = null,
         styleId: String? = null,
         onPress: List<Action>? = null,
         enabled: Boolean? = null
     ) : this(
         constant(text),
         textColor,
+        highlightedTextColor,
         textSize,
+        highlightedBackgroundColor,
         styleId,
         onPress,
         constantNullable(enabled)
